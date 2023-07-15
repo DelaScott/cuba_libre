@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Booking List</h1>
+    {% for booking in bookings %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ booking.user.username }}</h5>
+            <p class="card-text">Property: {{ booking.property.title }}</p>
+            <p class="card-text">Booking Date: {{ booking.booking_date }}</p>
+            <a href="{% url 'housing:booking_detail' booking.pk %}" class="btn btn-primary">Details</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>No bookings available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="welcome-section text-center">
+            <h1>Добро пожаловать на Кубу</h1>
+            <p>Мы твой проводник по Кубе. Выбери то, что тебе нужно:</p>
+            <div class="button-section">
+                <a href="{% url 'guides:guide_list' %}" class="btn btn-primary">Гиды</a>
+                <a href="{% url 'housing:property_list' %}" class="btn btn-primary">Жилье</a>
+                <a href="{% url 'car_rental:car_list' %}" class="btn btn-primary">Авто</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

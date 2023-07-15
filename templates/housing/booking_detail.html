@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ booking.user.username }}</h1>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Booking Details</h5>
+            <p class="card-text">Property: {{ booking.property.title }}</p>
+            <p class="card-text">Booking Date: {{ booking.booking_date }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

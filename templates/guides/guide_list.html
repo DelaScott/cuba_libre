@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Гиды на Кубе</h1>
+        <div class="row">
+            {% for guide in guides %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ guide.image.url }}" class="card-img-top" alt="{{ guide.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ guide.name }}</h5>
+                            <p class="card-text">{{ guide.description }}</p>
+                            <p>Языки: {{ guide.languages }}</p>
+                            <p>Опыт работы: {{ guide.experience }}</p>
+                            <p>Стоимость: ${{ guide.price }}</p>
+                            <a href="{% url 'guides:guide_detail' guide.id %}" class="btn btn-primary">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

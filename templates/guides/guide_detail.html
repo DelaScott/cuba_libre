@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">{{ guide.name }}</h2>
+                <p class="card-text">{{ guide.description }}</p>
+                <img src="{{ guide.image.url }}" alt="{{ guide.name }}" class="img-fluid">
+                <p>Языки: {{ guide.languages }}</p>
+                <p>Опыт работы: {{ guide.experience }}</p>
+                <p>Стоимость: ${{ guide.price }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

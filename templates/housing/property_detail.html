@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <img src="{{ property.image.url }}" class="card-img-top" alt="{{ property.title }}" style="max-width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title">{{ property.title }}</h5>
+            <p class="card-text">{{ property.description }}</p>
+            <p class="card-text">Price: ${{ property.price }}</p>
+            <p class="card-text">Rooms: {{ property.num_rooms }}</p>
+            <p class="card-text">Guests: {{ property.num_guests }}</p>
+            <p class="card-text">Phone: {{ property.phone.all|join:', ' }}</p>
+            <p class="card-text">Emails: {{ property.emails.all|join:', ' }}</p>
+            {% if property.available %}
+            <p class="card-text text-success">Есть свободные даты</p>
+            {% else %}
+            <p class="card-text text-danger">Дома нет</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

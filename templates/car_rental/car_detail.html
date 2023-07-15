@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ car.image.url }}" class="img-fluid rounded-start" alt="{{ car.brand }} {{ car.model }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                    <p class="card-text">{{ car.description }}</p>
+                    <p>Price: ${{ car.price }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
